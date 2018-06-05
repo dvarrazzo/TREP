@@ -39,25 +39,36 @@ html {
   background-size: cover;
 }
 
-#profiles
-{
+#profiles {
     height:auto;
 }
 
-#profiles DIV
-{
+#profiles DIV {
     margin:auto;
     padding:auto;
 }
 
-.profile
-{
+.profile {
     opacity:0;
 }
 
-#alphabetlistcontainer a
-{
+#alphabetlistcontainer a {
     margin: 2.5px;
+}
+
+#oops:hover {
+     color: #0d0d0d;
+     cursor: pointer;
+}
+
+#suggestions, #oops {
+    padding: 5px;
+    text-align: center;
+}
+
+#suggestions {
+    padding: 50px;
+    display: none;
 }
 
 /* write interactive text boxes for user to guess who's who */

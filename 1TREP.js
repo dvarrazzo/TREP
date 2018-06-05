@@ -61,3 +61,11 @@ for (let i = 0; i < 26; i++){
 }
 
 }
+
+/* Oops! Is someone missing? block below: */
+
+$(document).ready(function(){
+    $("#oops").click(function(){
+        $("#suggestions").slideToggle("slow");
+    });
+});
