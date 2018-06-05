@@ -17,8 +17,8 @@ h1 {
 
 a:hover
 {
-     color: #0d0d0d; /* write JS loop to create rainbow alphabet */
-     cursor: pointer;
+  color: #0d0d0d;
+  cursor: pointer;
 }
 
 p {
@@ -71,4 +71,10 @@ html {
     display: none;
 }
 
-/* write interactive text boxes for user to guess who's who */
+#wrapper {
+    margin: 20px;
+}
+
+h1.rainbow {
+    font-size: 40px;
+}

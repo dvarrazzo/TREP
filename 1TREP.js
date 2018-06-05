@@ -1,4 +1,4 @@
-/* Fade code block below: :-) */
+/* Fade code block below: */
 
 $(document).ready(function(){
   generateTags();
@@ -68,4 +68,24 @@ $(document).ready(function(){
     $("#oops").click(function(){
         $("#suggestions").slideToggle("slow");
     });
+});
+
+/* Rainbow text below WIP: */
+
+$(document).ready(function(){
+  $('.rainbow').rainbow({
+      colors: [
+          '#FF0000',
+          '#f26522',
+          '#fff200',
+          '#00a651',
+          '#28abe2',
+          '#2e3192',
+          '#6868ff'
+      ],
+      animate: true,
+      animateInterval: 100,
+      pad: false,
+      pauseLength: 100
+  });
 });
