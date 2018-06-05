@@ -1,4 +1,4 @@
-/* Fade code block below: */
+/* Fade code block below: :-) */
 
 $(document).ready(function(){
   generateTags();
