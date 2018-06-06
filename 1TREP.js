@@ -84,8 +84,8 @@ $(document).ready(function(){
           '#6868ff'
       ],
       animate: true,
-      animateInterval: 100,
+      animateInterval: 1500,
       pad: false,
-      pauseLength: 100
+      pauseLength: 1500
   });
 });

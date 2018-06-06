@@ -15,6 +15,10 @@ h1 {
   border: 1.5px dotted #0d0d0d;
 }
 
+a {
+  background-color : transparent;
+}
+
 a:hover
 {
   color: #0d0d0d;
@@ -32,12 +36,14 @@ body {
 }
 
 html {
-  background: url("1TREP flag.jpg") no-repeat center center fixed;
+  background: url("1TREP paper.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
+/* Above image copyright notice: http://www.psdgraphics.com/file/crumpled-paper.jpg */
 
 #profiles {
     height:auto;
@@ -71,10 +77,18 @@ html {
     display: none;
 }
 
-#wrapper {
-    margin: 20px;
-}
-
-h1.rainbow {
-    font-size: 40px;
+a.rainbow {
+   opacity: 0.85;
+   font-family: 'Berkshire Swash', cursive;
+   font-weight: 900;
+   padding: 20px;
+   border: none;
+   font-size: 95px;
+   left: 0;
+   line-height: 200px;
+   margin: auto;
+   margin-top: -100px;
+   position: absolute;
+   top: 50%;
+   width: 100%;
 }
