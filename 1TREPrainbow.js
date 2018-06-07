@@ -1,23 +1,23 @@
 (function($) {
 	$.fn.rainbow = function(options) {
 		this.each(function() {
-		
+
 			options.originalText = $(this).html();
 			options.iterations = 0;
 			if (!options.pauseLength) {
 				options.pauseLength = options.animateInterval;
 			}
 			$(this).data('options',options);
-			
+
 			if (options.pad) {
-			
+
 				for (x = 0; x < options.originalText.length; x++) {
 					options.colors.unshift(options.colors[options.colors.length-1]);
 				}
 			}
-			
-			$.fn.rainbow.render(this);		
-			
+
+			$.fn.rainbow.render(this);
+
 		});
 	}
 
@@ -26,7 +26,7 @@
 			var options = $(this).data('options');
 			if (options) {
 				options.animate = false;
-				$(this).data('options',options);		
+				$(this).data('options',options);
 			}
 		});
 	}
@@ -37,45 +37,47 @@
 			var options = $(this).data('options');
 			if (options) {
 				options.animate = true;
-				$(this).data('options',options);		
+				$(this).data('options',options);
 				$.fn.rainbow.render(this);
 			}
 		});
 	}
 
-		
+
 	$.fn.rainbow.render = function(obj) {
-	
+
 			var options = $(obj).data('options');
 			var chars = options.originalText.split('');
 
 			options.iterations++;
-				
+
 			var newstr = '';
-			var counter = 0;
-			for (var x in chars) {
-			
-				if (chars[x]!=' ') {
-					newstr = newstr + '<span style="color: ' + options.colors[counter] + ';">' + chars[x] + '</span>';
-					counter++;
-				} else {
-					newstr = newstr + ' ';
-				
+ 			var counter = 0;
+			var i = 0;
+ 			for (var x in chars) {
+
+ 				if (chars[x]!=' ') {
+					var col = (++i < options.iterations) ? options.colors[counter] : 'rgba(255,255,255,0)';
+  				newstr = newstr + '<span style="color: ' + col + ';">' + chars[x] + '</span>';
+ 					counter++;
+ 				} else {
+ 					newstr = newstr + ' ';
+
 				}
-			
-			
+
+
 				if (counter >= options.colors.length) {
 					counter = 0;
 				}
 			}
 			$(obj).html(newstr);
-	
+
 			var pause = (options.iterations % options.colors.length == 0);
-			
+
 
 
 			if (options.animate) {
-			
+
 				(
 					function(obj,interval) {
 						var options = $(obj).data('options');
@@ -86,23 +88,21 @@
 						$(obj).data('options',options);
 					}
 				)(obj,pause?options.pauseLength:options.animateInterval);
-			}	
+			}
 
-			
+
 	}
-	
-	
+
+
 	$.fn.rainbow.shift = function(obj) {
-	
-		var options = $(obj).data('options');
-		var color = options.colors.pop();
-		options.colors.unshift(color);
-		$.fn.rainbow.render(obj);
-	
-	}
-	
+
+ 		var options = $(obj).data('options');
+		if (!options.rotateEach || options.iterations % options.rotateEach == 0) {
+			var color = options.colors.pop();
+			options.colors.unshift(color);
+		}
+ 		$.fn.rainbow.render(obj);
+
+ 	}
+
 })(jQuery);
-
-
-
-
