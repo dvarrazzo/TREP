@@ -53,10 +53,12 @@
 				
 			var newstr = '';
 			var counter = 0;
+			var i = 0;
 			for (var x in chars) {
 			
 				if (chars[x]!=' ') {
-					newstr = newstr + '<span style="color: ' + options.colors[counter] + ';">' + chars[x] + '</span>';
+					var col = (++i < options.iterations) ? options.colors[counter] : 'rgba(255,255,255,0)';
+					newstr = newstr + '<span style="color: ' + col + ';">' + chars[x] + '</span>';
 					counter++;
 				} else {
 					newstr = newstr + ' ';
