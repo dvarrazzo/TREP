@@ -97,8 +97,10 @@
 	$.fn.rainbow.shift = function(obj) {
 	
 		var options = $(obj).data('options');
-		var color = options.colors.pop();
-		options.colors.unshift(color);
+		if (!options.rotateEach || options.iterations % options.rotateEach == 0) {
+			var color = options.colors.pop();
+			options.colors.unshift(color);
+		}
 		$.fn.rainbow.render(obj);
 	
 	}
