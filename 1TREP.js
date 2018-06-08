@@ -84,7 +84,7 @@ $(document).ready(function(){
           '#6868ff'
       ],
       animate: true,
-      animateInterval: 100,
+      animateInterval: 150,
       pad: false,
       rotateEach: 5,
    });
