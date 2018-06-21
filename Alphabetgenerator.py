@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-#"for every letter: write the body into body", then "for every letter: save the body"
 
-alphabet = list(map(chr, range(ord('a'), ord('z')+1)))
+# For every letter: write the body into body then for every letter: save the body
+
+alphabet = list(map(chr, range(ord('a'), ord('z')+1))) # Not using import string string.ascii_lowercase as I want to be able to include/exclude letters manually
 
 def main():
         for c in alphabet:
