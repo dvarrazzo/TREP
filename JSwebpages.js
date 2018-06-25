@@ -37,29 +37,22 @@ function convertNumToLetter(num){
 
 }
 
-function generateTags(){
+function generateTags() {
 
-let anchorTargetEl = document.getElementById("alphabetlistcontainer");
+  let anchorTargetEl = document.getElementById("alphabetlistcontainer");
 
+  if (anchorTargetEl) {
+    for (let i = 0; i < 26; i++){
 
-for (let i = 0; i < 26; i++){
+      let letter = convertNumToLetter(i);
+      let hrefForNewElement = letter + '.html';
 
-	let letter = convertNumToLetter(i);
-
-	let hrefForNewElement = letter + '.html';
-
-
-
-	let newElement = document.createElement('a');
-
-	newElement.href = hrefForNewElement;
-
-	newElement.text = letter.toUpperCase();
-
-	anchorTargetEl.appendChild(newElement);
-
-}
-
+      let newElement = document.createElement('a');
+      newElement.href = hrefForNewElement;
+      newElement.text = letter.toUpperCase();
+      anchorTargetEl.appendChild(newElement);
+    }
+  }
 }
 
 /* Oops! Is someone missing? block below: */
@@ -73,19 +66,22 @@ $(document).ready(function(){
 /* Rainbow text below: */
 
 $(document).ready(function(){
-  $('.rainbow').rainbow({
-      colors: [
-          '#FF0000',
-          '#f26522',
-          '#fff200',
-          '#00a651',
-          '#28abe2',
-          '#2e3192',
-          '#6868ff'
-      ],
-      animate: true,
-      animateInterval: 150,
-      pad: false,
-      rotateEach: 5,
-   });
- });
+  var r = $('.rainbow');
+  if (r.length) {
+    $('.rainbow').rainbow({
+        colors: [
+            '#FF0000',
+            '#f26522',
+            '#fff200',
+            '#00a651',
+            '#28abe2',
+            '#2e3192',
+            '#6868ff'
+        ],
+        animate: true,
+        animateInterval: 150,
+        pad: false,
+        rotateEach: 5,
+     });
+   }
+});
