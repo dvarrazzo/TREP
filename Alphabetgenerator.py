@@ -7,15 +7,15 @@ alphabet = list(map(chr, range(ord('a'), ord('z')+1))) # Not using import string
 def main():
         for c in alphabet:
         # Read the template of the page
-            template = "/home/h/Documents/trepgit/Template/alphabettemplate.html"
+            template = "Template/alphabettemplate.html"
             with open(template) as f:
                 alphabettemplate = f.read()
         # Read the body of the page
-            body = "/home/h/Documents/trepgit/Bodies/{}-body.html".format(c)
+            body = "Bodies/{}-body.html".format(c)
             with open(body) as f:
                 body = f.read()
         # Write the complete page
-            filename = "/home/h/Documents/trepgit/Generated web pages/{}.html".format(c)
+            filename = "Generated web pages/{}.html".format(c)
             page = alphabettemplate.format(filename=filename, body=body)
             with open(filename, "w") as f:
                 f.write(page)
